@@ -1,7 +1,8 @@
 BreakingBadCast
 =================
 
-> In this app you can check the breaking bad cast
+> In this app you can check the breaking bad cast.
+
 > [API](https://breakingbadapi.com/).
 
 Preprocessors:

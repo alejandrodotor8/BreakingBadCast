@@ -1,0 +1,43 @@
+{
+	"name": "breaking-bad-cast",
+	"version": "1.0.0",
+	"description": "Breaking Bad Cast app",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack --mode production",
+		"dev": "webpack --mode development",
+		"serve": "webpack serve --open 'google chrome' --mode development"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alejandrodotor8/BreakingBadCast.git"
+	},
+	"keywords": [],
+	"author": "Alejandro Dotor <adotorca@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/alejandrodotor8/BreakingBadCast/issues"
+	},
+	"homepage": "https://github.com/alejandrodotor8/BreakingBadCast#readme",
+	"dependencies": {
+		"@babel/runtime": "^7.12.5"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.10",
+		"@babel/plugin-transform-runtime": "^7.12.10",
+		"@babel/preset-env": "^7.12.11",
+		"babel-loader": "^8.2.2",
+		"copy-webpack-plugin": "^7.0.0",
+		"css-loader": "^5.0.1",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^4.5.1",
+		"mini-css-extract-plugin": "^1.3.3",
+		"sass": "^1.32.2",
+		"sass-loader": "^10.1.0",
+		"style-loader": "^2.0.0",
+		"url-loader": "^4.1.1",
+		"webpack": "^5.12.1",
+		"webpack-cli": "^4.3.1",
+		"webpack-dev-server": "^3.11.1"
+	}
+}

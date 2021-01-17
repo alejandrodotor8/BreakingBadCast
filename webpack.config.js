@@ -1,4 +1,4 @@
-const path = require('path'); //importing path module
+const path = require('path');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -16,8 +16,8 @@ module.exports = {
 	devServer: {
 		port: 8080,
 		contentBase: path.resolve(__dirname, 'dist'),
-		//open: true,
-		//hot: true,
+		// open: true,
+		// hot: true,
 	},
 	module: {
 		rules: [
@@ -27,15 +27,15 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.js$/, //Any file that end with .js
+				test: /\.js$/, // Any file that end with .js
 				use: 'babel-loader',
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.scss$/, //Any file that end with .scss
+				test: /\.scss$/, // Any file that end with .scss
 				use: [
 					// Creates `style` nodes from JS strings
-					//'style-loader',
+					// 'style-loader',
 					{
 						loader: MiniCSSExtractPlugin.loader,
 					},

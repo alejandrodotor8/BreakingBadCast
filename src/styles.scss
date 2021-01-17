@@ -1,28 +1,28 @@
 $color-bg: rgb(41, 41, 41);
-*{
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
-   font-size: 62.5%;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 62.5%;
 }
-body{
-   width: 100vw;
-   height: 100vh;
-   background: $color-bg;
-   color: rgb(255, 255, 255);
-   font-family: Arial, Helvetica, sans-serif;
-   text-align: center;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-content: center;
+body {
+	width: 100vw;
+	height: 100vh;
+	background: $color-bg;
+	color: rgb(255, 255, 255);
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
 }
-h1{
-   width: 100vw;
-   font-size: 3rem;
+h1 {
+	width: 100vw;
+	font-size: 3rem;
 }
-input{
-   width: 60vw;
-   height: 30px;
-   margin: 10px;
+input {
+	width: 60vw;
+	height: 30px;
+	margin: 10px;
 }

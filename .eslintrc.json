@@ -1,0 +1,32 @@
+{
+	"extends": [
+		"airbnb",
+		"prettier",
+		"plugin:node/recommended"
+	],
+	"plugins": [
+		"prettier"
+	],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"semi": true,
+				"singleQuote": true,
+				"tabWidth": 3,
+				"useTabs": true
+			}
+		],
+		"no-unused-vars": "warn",
+		"no-console": "off",
+		"func-names": "off",
+		"no-process-exit": "off",
+		"object-shorthand": "off",
+		"class-methods-use-this": "off"
+	},
+	"no-restricted-modules": [
+		"error",
+		"foo-module",
+		"bar-module"
+	]
+}

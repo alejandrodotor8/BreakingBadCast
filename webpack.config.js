@@ -2,6 +2,7 @@ const path = require('path'); //importing path module
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -20,6 +21,11 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.pug$/,
+				use: 'pug-loader',
+				exclude: /node_modules/,
+			},
 			{
 				test: /\.js$/, //Any file that end with .js
 				use: 'babel-loader',
@@ -55,10 +61,10 @@ module.exports = {
 		],
 	},
 	plugins: [
-		//new webpack.HotModuleReplacementPlugin(),
+		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'Plugins',
-			template: path.resolve(__dirname, 'src/index.html'),
+			template: path.resolve(__dirname, 'src/index.pug'),
 		}),
 		new MiniCSSExtractPlugin({
 			filename: 'styles/[name].css',

@@ -1,3 +1,4 @@
-import './styles.scss';
+import './styles/styles.scss';
+
 console.log('hello World');
 const hi = 'hi';

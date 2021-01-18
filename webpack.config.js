@@ -16,8 +16,6 @@ module.exports = {
 	devServer: {
 		port: 8080,
 		contentBase: path.resolve(__dirname, 'dist'),
-		// open: true,
-		// hot: true,
 	},
 	module: {
 		rules: [
@@ -27,23 +25,13 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.js$/, // Any file that end with .js
+				test: /\.js$/,
 				use: 'babel-loader',
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.scss$/, // Any file that end with .scss
-				use: [
-					// Creates `style` nodes from JS strings
-					// 'style-loader',
-					{
-						loader: MiniCSSExtractPlugin.loader,
-					},
-					// Translates CSS into CommonJS
-					'css-loader',
-					// Compiles Sass to CSS
-					'sass-loader',
-				],
+				test: /\.scss$/,
+				use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
 			},
 			{
 				test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4$/,
@@ -65,6 +53,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Plugins',
 			template: path.resolve(__dirname, 'src/index.pug'),
+			//scriptLoading: 'defer',
 		}),
 		new MiniCSSExtractPlugin({
 			filename: 'styles/[name].css',

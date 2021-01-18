@@ -1,0 +1,21 @@
+$white: #ffffff;
+$darkish-green: #1f6032;
+$medium-grey: #77807a;
+$greenish: #369457;
+$charcoal: #1d271d;
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	font-family: HelveticaNeue, Arial, sans-serif;
+}
+body {
+	width: 100vw;
+	font-size: 1.5rem;
+}

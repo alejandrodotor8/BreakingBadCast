@@ -53,7 +53,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Plugins',
 			template: path.resolve(__dirname, 'src/index.pug'),
-			//scriptLoading: 'defer',
+			scriptLoading: 'async',
 		}),
 		new MiniCSSExtractPlugin({
 			filename: 'styles/[name].css',

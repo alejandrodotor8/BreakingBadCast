@@ -1,13 +1,24 @@
-$white: #ffffff;
-$darkish-green: #1f6032;
-$medium-grey: #77807a;
-$greenish: #369457;
-$charcoal: #1d271d;
-@mixin flex-center {
+/*------COLORS------*/
+$color: (
+	white: #ffffff,
+	darkish-green: #1f6032,
+	medium-grey: #656d67,
+	greenish: #369457,
+	charcoal: #1d271d,
+);
+/*------Font sizes------*/
+$font-size: (
+	title: 2.6rem,
+	subtitle: 1.8rem,
+	p: 1.5rem,
+);
+/*------Mixins------*/
+@mixin flex($justify-content: space-between, $align-items: center) {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: $justify-content;
+	align-items: $align-items;
 }
+
 * {
 	padding: 0;
 	margin: 0;
@@ -17,5 +28,7 @@ $charcoal: #1d271d;
 }
 body {
 	width: 100vw;
-	font-size: 1.5rem;
+	height: 100vh;
+	padding: 0 8vw;
+	font-size: map-get($font-size, p);
 }

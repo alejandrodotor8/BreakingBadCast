@@ -61,11 +61,6 @@ module.exports = {
 			template: path.resolve(__dirname, 'src/index.pug'),
 			scriptLoading: 'defer',
 		}),
-		new HtmlWebpackPlugin({
-			title: 'character',
-			template: path.resolve(__dirname, 'src/character.pug'),
-			scriptLoading: 'defer',
-		}),
 		new MiniCSSExtractPlugin({
 			filename: 'styles/[name].css',
 		}),

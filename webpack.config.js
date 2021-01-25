@@ -3,6 +3,7 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const MediaQueryPlugin = require('media-query-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -31,7 +32,12 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
+				use: [
+					MiniCSSExtractPlugin.loader,
+					'css-loader',
+					// MediaQueryPlugin.loader,
+					'sass-loader',
+				],
 			},
 			{
 				test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4$/,
@@ -53,7 +59,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Plugins',
 			template: path.resolve(__dirname, 'src/index.pug'),
-			scriptLoading: 'async',
+			scriptLoading: 'defer',
 		}),
 		new MiniCSSExtractPlugin({
 			filename: 'styles/[name].css',
@@ -61,6 +67,12 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [{ from: 'src/assets', to: 'assets' }],
 		}),
+		/* new MediaQueryPlugin({
+			include: ['styles'],
+			queries: {
+				'print, screen and (min-width: 600px)': 'desktop',
+			},
+		}), */
 	],
 	optimization: {
 		splitChunks: {

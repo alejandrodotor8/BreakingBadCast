@@ -1,23 +1,60 @@
 import './styles/styles.scss';
+//if (window.innerWidth >= 600) {
+//import(/* webpackChunkName: 'styles-desktop' */ './styles-desktop.scss');
+//}
+import { registerImage } from './lazy';
 
 const characters = document.querySelector('#characters');
 
+function characterInfo() {
+	console.log('click');
+}
+
+function toggleFav() {
+	console.log('fav');
+}
+
 function showCast(data) {
+	const allCast = [];
 	for (let i = 0; i < data.length; i++) {
 		const element = data[i];
-		console.log(element);
-		const item = document.createElement('div');
-		item.classList.add('item');
-		item.innerHTML = `
-         <img class="item__image" src="${element.img}" alt="${element.name}" />
-         <div class="item__text">
+		const CreateCastNode = () => {
+			//? item
+			const item = document.createElement('div');
+			item.classList.add('item');
+			item.dataset.id = element.char_id;
+			//? character
+			const character = document.createElement('a');
+			character.classList.add('item__character');
+			character.onclick = characterInfo;
+			//? Image
+			const image = document.createElement('img');
+			image.classList.add('character__image');
+			image.dataset.src = element.img;
+			//? Text
+			const text = document.createElement('div');
+			text.classList.add('character__text');
+			text.innerHTML = `
             <h3>${element.portrayed}</h3>
             <h4>${element.name}</h4>
-         </div>
-         <img class="item__fav" src="./assets/img/fav-no.svg" alt="favorite" />
-      `;
-		characters.appendChild(item);
+         `;
+			//? FavIcon
+			const fav = document.createElement('a');
+			fav.classList.add('item__fav');
+			fav.onclick = toggleFav;
+			fav.innerHTML = `
+			<img src="./assets/img/fav-no.svg" alt="favorite">
+			`;
+			character.append(image, text);
+			item.append(character, fav);
+
+			registerImage(image);
+			return item;
+		};
+		const newCast = CreateCastNode();
+		allCast.push(newCast);
 	}
+	characters.append(...allCast);
 }
 
 async function consultCast() {
@@ -32,6 +69,4 @@ async function consultCast() {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	consultCast();
-});
+document.addEventListener('DOMContentLoaded', consultCast);

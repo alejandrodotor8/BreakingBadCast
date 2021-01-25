@@ -27,6 +27,7 @@ function showCast(data) {
 			const character = document.createElement('a');
 			character.classList.add('item__character');
 			character.onclick = characterInfo;
+			character.href = '/character';
 			//? Image
 			const image = document.createElement('img');
 			image.classList.add('character__image');

@@ -14,13 +14,15 @@
 		padding-top: 10%;
 	}
 	.character-img {
+		width: 60%;
+		height: 60%;
 		&__img {
 			border-radius: 20px;
 		}
 		&__back-btn {
 			position: relative;
 			left: 0;
-			top: -50%;
+			top: -40%;
 		}
 	}
 	.character-text {

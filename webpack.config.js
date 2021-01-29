@@ -8,7 +8,7 @@ const webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		app: path.resolve(__dirname, 'src/index.js'),
+		main: path.resolve(__dirname, 'src/index.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -20,11 +20,6 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{
-				test: /\.pug$/,
-				use: 'pug-loader',
-				exclude: /node_modules/,
-			},
 			{
 				test: /\.js$/,
 				use: 'babel-loader',
@@ -57,15 +52,15 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			title: 'index',
-			template: path.resolve(__dirname, 'src/index.pug'),
+			template: path.resolve(__dirname, 'public/index.html'),
+			filename: './index.html',
 			scriptLoading: 'defer',
 		}),
 		new MiniCSSExtractPlugin({
 			filename: 'styles/[name].css',
 		}),
 		new CopyWebpackPlugin({
-			patterns: [{ from: 'src/assets', to: 'assets' }],
+			patterns: [{ from: 'src/utils', to: 'utils' }],
 		}),
 		/* new MediaQueryPlugin({
 			include: ['styles'],

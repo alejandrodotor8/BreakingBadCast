@@ -18,6 +18,10 @@ $font-size: (
 	justify-content: $justify-content;
 	align-items: $align-items;
 }
+@mixin padding {
+	padding-left: 4vh;
+	padding-right: 4vh;
+}
 
 * {
 	padding: 0;
@@ -29,6 +33,8 @@ $font-size: (
 body {
 	width: 100vw;
 	height: 100vh;
-	padding: 0 8vw;
 	font-size: map-get($font-size, p);
+}
+a {
+	text-decoration: none;
 }

@@ -18,9 +18,9 @@ $font-size: (
 	justify-content: $justify-content;
 	align-items: $align-items;
 }
-@mixin padding {
-	padding-left: 4vh;
-	padding-right: 4vh;
+@mixin padding($left: 8vw, $right: 8vw) {
+	padding-left: $left;
+	padding-right: $right;
 }
 
 * {

@@ -32,14 +32,17 @@
 	}
 	&__fav-btn {
 		@include flex(center, center);
-		width: 45px;
-		height: 50px;
+		width: 55px;
+		height: 60px;
 		background-color: map-get($color, greenish);
 		border-radius: 0 20px 0 20px;
 		position: absolute;
 		z-index: 30;
 		left: 0;
 		bottom: 0;
+		.fav-no-logo {
+			fill: map-get($color, white);
+		}
 	}
 }
 .fav-btn {
@@ -48,7 +51,7 @@
 .character-text {
 	width: 100%;
 	height: 10%;
-	padding: 0 10%;
+	padding: 0 5%;
 	@include flex(space-evenly, center);
 }
 .text__h3 {
@@ -89,4 +92,8 @@
 	text-align: end;
 	padding: 0 10px;
 	border-bottom: solid 1.5px rgba($color: #b2bfb7, $alpha: 0.5);
+}
+.table__row:last-child .row-body,
+.table__row:last-child .row-head {
+	border: none;
 }

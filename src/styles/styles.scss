@@ -45,10 +45,8 @@
 			color: map-get($color, medium-grey);
 		}
 	}
-	&__btn {
-		.btn-search {
-			fill: map-get($color, white);
-		}
+	.btn-search {
+		fill: map-get($color, white);
 	}
 	&:hover {
 		background: map-get($color, white);
@@ -125,6 +123,7 @@ main {
 .character__image {
 	width: 60px;
 	height: 67.5px;
+	background-color: map-get($color, greenish);
 	border-radius: 10px;
 	object-fit: cover;
 	object-position: top;

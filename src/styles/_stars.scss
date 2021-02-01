@@ -8,11 +8,12 @@
 .rating input {
 	cursor: pointer;
 	position: relative;
-	margin: 10px;
+	margin: 12px;
 	outline: none;
 	border: none;
 	appearance: none;
-	-moz-appearance: initial;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
 
 .rating input::before,
@@ -40,7 +41,7 @@
 	font-family: 'Font Awesome 5 Free';
 	content: '\f005';
 	font-weight: 900;
-	font-size: 16px;
+	font-size: 18px;
 	color: rgb(255, 217, 0);
 	opacity: 0;
 }

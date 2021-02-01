@@ -49,6 +49,12 @@
 	.rating input::after {
 		font-size: 30px;
 	}
+	.search-box:hover {
+		width: 200px;
+		.search-box__txt {
+			width: 100px;
+		}
+	}
 }
 @media (min-width: 1024px) {
 	.header,
